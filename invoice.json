@@ -1085,7 +1085,6 @@
           },
           "additionalProperties": false,
           "required": [
-            "type",
             "invoiceNumber",
             "seller",
             "buyer",
