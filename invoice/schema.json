@@ -44,22 +44,6 @@
               "description": "An entity which offers (sells, leases, lends, or loans) the services or goods. A seller may also be a provider.",
               "type": "object",
               "properties": {
-                "type": {
-                  "type": "array",
-                  "readOnly": true,
-                  "const": [
-                    "Organization"
-                  ],
-                  "default": [
-                    "Organization"
-                  ],
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "Organization"
-                    ]
-                  }
-                },
                 "id": {
                   "title": "Identifier",
                   "description": "Identifier for the seller",
@@ -90,43 +74,11 @@
                   "description": "Seller's physical location, such as address or coordinates.",
                   "type": "object",
                   "properties": {
-                    "type": {
-                      "type": "array",
-                      "readOnly": true,
-                      "const": [
-                        "Place"
-                      ],
-                      "default": [
-                        "Place"
-                      ],
-                      "items": {
-                        "type": "string",
-                        "enum": [
-                          "Place"
-                        ]
-                      }
-                    },
                     "address": {
                       "title": "Postal Address",
                       "description": "The postal address for an organization or place.",
                       "type": "object",
                       "properties": {
-                        "type": {
-                          "type": "array",
-                          "readOnly": true,
-                          "const": [
-                            "PostalAddress"
-                          ],
-                          "default": [
-                            "PostalAddress"
-                          ],
-                          "items": {
-                            "type": "string",
-                            "enum": [
-                              "PostalAddress"
-                            ]
-                          }
-                        },
                         "streetAddress": {
                           "title": "Street Address",
                           "description": "The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building.",
@@ -153,44 +105,19 @@
                           "type": "string"
                         }
                       },
-                      "additionalProperties": false,
-                      "required": [
-                        "type"
-                      ]
+                      "additionalProperties": false
                     }
                   },
-                  "additionalProperties": false,
-                  "required": [
-                    "type"
-                  ]
+                  "additionalProperties": false
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "type"
-              ]
+              "additionalProperties": false
             },
             "buyer": {
               "title": "Buyer",
               "description": "Importer of record. Party placing the order or paying the invoice.",
               "type": "object",
               "properties": {
-                "type": {
-                  "type": "array",
-                  "readOnly": true,
-                  "const": [
-                    "Organization"
-                  ],
-                  "default": [
-                    "Organization"
-                  ],
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "Organization"
-                    ]
-                  }
-                },
                 "id": {
                   "title": "Identifier",
                   "description": "Identifier for the buyer",
@@ -221,43 +148,11 @@
                   "description": "Buyer's physical location, such as address or coordinates.",
                   "type": "object",
                   "properties": {
-                    "type": {
-                      "type": "array",
-                      "readOnly": true,
-                      "const": [
-                        "Place"
-                      ],
-                      "default": [
-                        "Place"
-                      ],
-                      "items": {
-                        "type": "string",
-                        "enum": [
-                          "Place"
-                        ]
-                      }
-                    },
                     "address": {
                       "title": "Postal Address",
                       "description": "The postal address for an organization or place.",
                       "type": "object",
                       "properties": {
-                        "type": {
-                          "type": "array",
-                          "readOnly": true,
-                          "const": [
-                            "PostalAddress"
-                          ],
-                          "default": [
-                            "PostalAddress"
-                          ],
-                          "items": {
-                            "type": "string",
-                            "enum": [
-                              "PostalAddress"
-                            ]
-                          }
-                        },
                         "streetAddress": {
                           "title": "Street Address",
                           "description": "The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building.",
@@ -284,22 +179,13 @@
                           "type": "string"
                         }
                       },
-                      "additionalProperties": false,
-                      "required": [
-                        "type"
-                      ]
+                      "additionalProperties": false
                     }
                   },
-                  "additionalProperties": false,
-                  "required": [
-                    "type"
-                  ]
+                  "additionalProperties": false
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "type"
-              ]
+              "additionalProperties": false
             },
             "itemsShipped": {
               "title": "Items Shipped",
@@ -308,22 +194,6 @@
               "items": {
                 "type": "object",
                 "properties": {
-                  "type": {
-                    "type": "array",
-                    "readOnly": true,
-                    "const": [
-                      "TradeLineItem"
-                    ],
-                    "default": [
-                      "TradeLineItem"
-                    ],
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "TradeLineItem"
-                      ]
-                    }
-                  },
                   "name": {
                     "title": "Name",
                     "description": "Name of the Tradeline item.",
@@ -338,22 +208,6 @@
                     "description": "Product details.",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "Product"
-                        ],
-                        "default": [
-                          "Product"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "Product"
-                          ]
-                        }
-                      },
                       "id": {
                         "title": "Product Identifier",
                         "description": "The product identifier, such as ISBN.",
@@ -368,22 +222,6 @@
                         "description": "The manufacturer of the product.",
                         "type": "object",
                         "properties": {
-                          "type": {
-                            "type": "array",
-                            "readOnly": true,
-                            "const": [
-                              "Organization"
-                            ],
-                            "default": [
-                              "Organization"
-                            ],
-                            "items": {
-                              "type": "string",
-                              "enum": [
-                                "Organization"
-                              ]
-                            }
-                          },
                           "id": {
                             "title": "Identifier",
                             "description": "Identifier for the buyer",
@@ -395,10 +233,7 @@
                             "type": "string"
                           }
                         },
-                        "additionalProperties": false,
-                        "required": [
-                          "type"
-                        ]
+                        "additionalProperties": false
                       },
                       "name": {
                         "title": "Name",
@@ -420,22 +255,6 @@
                         "description": "Weight of the product.",
                         "type": "object",
                         "properties": {
-                          "type": {
-                            "type": "array",
-                            "readOnly": true,
-                            "const": [
-                              "QuantitativeValue"
-                            ],
-                            "default": [
-                              "QuantitativeValue"
-                            ],
-                            "items": {
-                              "type": "string",
-                              "enum": [
-                                "QuantitativeValue"
-                              ]
-                            }
-                          },
                           "unitCode": {
                             "title": "Unit Code",
                             "description": "Unit of measurement.",
@@ -447,32 +266,13 @@
                             "type": "string"
                           }
                         },
-                        "additionalProperties": false,
-                        "required": [
-                          "type"
-                        ]
+                        "additionalProperties": false
                       },
                       "productPrice": {
                         "title": "Product Price",
                         "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
                         "type": "object",
                         "properties": {
-                          "type": {
-                            "type": "array",
-                            "readOnly": true,
-                            "const": [
-                              "PriceSpecification"
-                            ],
-                            "default": [
-                              "PriceSpecification"
-                            ],
-                            "items": {
-                              "type": "string",
-                              "enum": [
-                                "PriceSpecification"
-                              ]
-                            }
-                          },
                           "price": {
                             "title": "Price",
                             "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -484,10 +284,7 @@
                             "type": "string"
                           }
                         },
-                        "additionalProperties": false,
-                        "required": [
-                          "type"
-                        ]
+                        "additionalProperties": false
                       },
                       "sku": {
                         "title": "SKU Number",
@@ -504,22 +301,6 @@
                         "description": "Product commodity code, codification system and description",
                         "type": "object",
                         "properties": {
-                          "type": {
-                            "type": "array",
-                            "readOnly": true,
-                            "const": [
-                              "Commodity"
-                            ],
-                            "default": [
-                              "Commodity"
-                            ],
-                            "items": {
-                              "type": "string",
-                              "enum": [
-                                "Commodity"
-                              ]
-                            }
-                          },
                           "commodityCode": {
                             "title": "Commodity Code",
                             "description": "The commodity code at a given granularity, commonly a 6-digit HS or a 10-digit HTS code.",
@@ -539,16 +320,10 @@
                             "type": "string"
                           }
                         },
-                        "additionalProperties": false,
-                        "required": [
-                          "type"
-                        ]
+                        "additionalProperties": false
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   },
                   "itemCount": {
                     "title": "Item Count",
@@ -570,22 +345,6 @@
                     "description": "A measure of the net weight (mass).",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "QuantitativeValue"
-                        ],
-                        "default": [
-                          "QuantitativeValue"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "QuantitativeValue"
-                          ]
-                        }
-                      },
                       "unitCode": {
                         "title": "Unit Code",
                         "description": "Unit of measurement.",
@@ -597,32 +356,13 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   },
                   "grossWeight": {
                     "title": "Trade Line Item Gross Weight",
                     "description": "A measure of the gross weight (mass) which includes packaging but excludes any transport equipment.",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "QuantitativeValue"
-                        ],
-                        "default": [
-                          "QuantitativeValue"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "QuantitativeValue"
-                          ]
-                        }
-                      },
                       "unitCode": {
                         "title": "Unit Code",
                         "description": "Unit of measurement.",
@@ -634,10 +374,7 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   },
                   "ioss": {
                     "title": "IOSS",
@@ -658,22 +395,6 @@
                     "description": "Total line item price.",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "PriceSpecification"
-                        ],
-                        "default": [
-                          "PriceSpecification"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "PriceSpecification"
-                          ]
-                        }
-                      },
                       "price": {
                         "title": "Price",
                         "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -685,32 +406,13 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   },
                   "lineItemTax": {
                     "title": "Tax",
                     "description": "Applicable tax.",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "PriceSpecification"
-                        ],
-                        "default": [
-                          "PriceSpecification"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "PriceSpecification"
-                          ]
-                        }
-                      },
                       "price": {
                         "title": "Price",
                         "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -722,32 +424,13 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   },
                   "lineItemFreightCost": {
                     "title": "Freight Cost",
                     "description": "Included cost of freight.",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "PriceSpecification"
-                        ],
-                        "default": [
-                          "PriceSpecification"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "PriceSpecification"
-                          ]
-                        }
-                      },
                       "price": {
                         "title": "Price",
                         "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -759,32 +442,13 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   },
                   "lineItemInsuranceCost": {
                     "title": "Insurance Cost",
                     "description": "Included cost of insurance.",
                     "type": "object",
                     "properties": {
-                      "type": {
-                        "type": "array",
-                        "readOnly": true,
-                        "const": [
-                          "PriceSpecification"
-                        ],
-                        "default": [
-                          "PriceSpecification"
-                        ],
-                        "items": {
-                          "type": "string",
-                          "enum": [
-                            "PriceSpecification"
-                          ]
-                        }
-                      },
                       "price": {
                         "title": "Price",
                         "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -796,16 +460,10 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false,
-                    "required": [
-                      "type"
-                    ]
+                    "additionalProperties": false
                   }
                 },
-                "additionalProperties": false,
-                "required": [
-                  "type"
-                ]
+                "additionalProperties": false
               },
               "minItems": 1
             },
