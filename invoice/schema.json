@@ -14,21 +14,6 @@
           "description": "A statement of the money due for goods or services; a bill.",
           "type": "object",
           "properties": {
-            "type": {
-              "type": "array",
-              "const": [
-                "Invoice"
-              ],
-              "default": [
-                "Invoice"
-              ],
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Invoice"
-                ]
-              }
-            },
             "isProforma": {
               "title": "is Pro Forma",
               "description": "Indicates if this credential is a Pro Forma Invoice, or a normal invoice.",
@@ -857,22 +842,6 @@
               "description": "The subtotal of line items.",
               "type": "object",
               "properties": {
-                "type": {
-                  "type": "array",
-                  "readOnly": true,
-                  "const": [
-                    "PriceSpecification"
-                  ],
-                  "default": [
-                    "PriceSpecification"
-                  ],
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "PriceSpecification"
-                    ]
-                  }
-                },
                 "price": {
                   "title": "Price",
                   "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -884,10 +853,7 @@
                   "type": "string"
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "type"
-              ]
+              "additionalProperties": false
             },
             "discounts": {
               "title": "Discounts",
@@ -896,22 +862,6 @@
               "items": {
                 "type": "object",
                 "properties": {
-                  "type": {
-                    "type": "array",
-                    "readOnly": true,
-                    "const": [
-                      "PriceSpecification"
-                    ],
-                    "default": [
-                      "PriceSpecification"
-                    ],
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "PriceSpecification"
-                      ]
-                    }
-                  },
                   "price": {
                     "title": "Price",
                     "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -923,10 +873,7 @@
                     "type": "string"
                   }
                 },
-                "additionalProperties": false,
-                "required": [
-                  "type"
-                ]
+                "additionalProperties": false
               }
             },
             "deductions": {
@@ -936,22 +883,6 @@
               "items": {
                 "type": "object",
                 "properties": {
-                  "type": {
-                    "type": "array",
-                    "readOnly": true,
-                    "const": [
-                      "PriceSpecification"
-                    ],
-                    "default": [
-                      "PriceSpecification"
-                    ],
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "PriceSpecification"
-                      ]
-                    }
-                  },
                   "price": {
                     "title": "Price",
                     "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -963,10 +894,7 @@
                     "type": "string"
                   }
                 },
-                "additionalProperties": false,
-                "required": [
-                  "type"
-                ]
+                "additionalProperties": false
               }
             },
             "tax": {
@@ -974,22 +902,6 @@
               "description": "Applicable tax.",
               "type": "object",
               "properties": {
-                "type": {
-                  "type": "array",
-                  "readOnly": true,
-                  "const": [
-                    "PriceSpecification"
-                  ],
-                  "default": [
-                    "PriceSpecification"
-                  ],
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "PriceSpecification"
-                    ]
-                  }
-                },
                 "price": {
                   "title": "Price",
                   "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -1001,32 +913,13 @@
                   "type": "string"
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "type"
-              ]
+              "additionalProperties": false
             },
             "freightCost": {
               "title": "Freight Cost",
               "description": "Included cost of freight.",
               "type": "object",
               "properties": {
-                "type": {
-                  "type": "array",
-                  "readOnly": true,
-                  "const": [
-                    "PriceSpecification"
-                  ],
-                  "default": [
-                    "PriceSpecification"
-                  ],
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "PriceSpecification"
-                    ]
-                  }
-                },
                 "price": {
                   "title": "Price",
                   "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -1038,32 +931,13 @@
                   "type": "string"
                 }
               },
-              "additionalProperties": false,
-              "required": [
-                "type"
-              ]
+              "additionalProperties": false
             },
             "totalPaymentDue": {
               "title": "Total Payment Due",
               "description": "The total amount due.",
               "type": "object",
               "properties": {
-                "type": {
-                  "type": "array",
-                  "readOnly": true,
-                  "const": [
-                    "PriceSpecification"
-                  ],
-                  "default": [
-                    "PriceSpecification"
-                  ],
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "PriceSpecification"
-                    ]
-                  }
-                },
                 "price": {
                   "title": "Price",
                   "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
@@ -1077,7 +951,6 @@
               },
               "additionalProperties": false,
               "required": [
-                "type",
                 "price",
                 "priceCurrency"
               ]
