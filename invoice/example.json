@@ -1,0 +1,126 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "id": "urn:uuid:5e45f155-c949-4005-a7e5-26ni58b6a59a",
+  "type": [
+    "VerifiableCredential",
+    "VerifiableAttestation",
+    "CommercialInvoiceCredential"
+  ],
+  "issuanceDate": "2023-11-28T21:12:54.969989773+01:00",
+  "issued": "2023-11-28T21:12:54.969989773+01:00",
+  "validFrom": "2023-11-28T21:12:54.969989773+01:00",
+  "validUntil": "2023-11-29T21:12:54.969989773+01:00",
+  "issuer": "did:key:z6MktHQo3fRRohk44dsbE76CuiTpBmyMWq2VVjvV6aBSeE3U",
+  "credentialSubject": {
+    "invoiceNumber": "INV-2401123",
+    "purchaseOrderNumbers": ["PO99887755"],
+    "isProforma": false,
+    "destinationCountry": "SK",
+    "purchaseDate": "2021-02-21",
+    "seller": {
+      "id": "did:web:robomaze.com",
+      "name": "Robomaze, inc",
+      "url": "https://robomaze.io",
+      "location": {
+        "address": {
+          "type": ["PostalAddress"],
+          "streetAddress": "Průhonice 8",
+          "addressLocality": "Prague",
+          "addressRegion": "Central Bohemia",
+          "postalCode": "25243",
+          "addressCountry": "CZ"
+        }
+      },
+      "email": "info@robomaze.io",
+      "phoneNumber": "+420-2-96183046"
+    },
+    "buyer": {
+      "id": "did:web:triveria.com",
+      "name": "Triveria, inc",
+      "location": {
+        "address": {
+          "streetAddress": "3 Trust street 3",
+          "addressLocality": "Kosice",
+          "addressRegion": "Kosice region",
+          "postalCode": "04022",
+          "addressCountry": "SK"
+        }
+      },
+      "email": "info@triveria.com"
+    },
+    "itemsShipped": [
+      {
+        "product": {
+          "manufacturer": {
+            "name": "East-West Machine Engineering"
+          },
+          "description": "RS PRO Single, Portable General Purpose Hydraulic Cylinder, 30t, 150mm stroke",
+          "weight": {
+            "unitCode": "kg",
+            "value": "14.6"
+          }
+        },
+        "itemCount": 5,
+        "grossWeight": {
+          "value": "73",
+          "unitCode": "kg"
+        },
+        "lineItemTotalPrice": {
+          "price": 8230,
+          "priceCurrency": "EUR"
+        },
+        "lineItemTax": {
+          "price": 82.30,
+          "priceCurrency": "EUR"
+        },
+        "lineItemFreightCost": {
+          "price": 78,
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "product": {
+          "manufacturer": {
+            "name": "East-West Machine Engineering"
+          },
+          "description": "RS PRO Pneumatic Guided Cylinder - 12mm Bore, 75mm Stroke, SGM Series, Double Acting",
+          "weight": {
+            "value": "550",
+            "unitCode": "g"
+          }
+        },
+        "itemCount": 20,
+        "grossWeight": {
+          "value": "11",
+          "unitCode": "kg"
+        },
+        "lineItemTotalPrice": {
+          "price": 3604,
+          "priceCurrency": "EUR"
+        },
+        "lineItemTax": {
+          "price": 36.04,
+          "priceCurrency": "EUR"
+        },
+        "lineItemFreightCost": {
+          "price": 47,
+          "priceCurrency": "EUR"
+        }
+      }
+    ],
+    "totalWeight": {
+      "value": "84",
+      "unitCode": "kg"
+    },
+    "totalPaymentDue": {
+      "price": 12077.34,
+      "priceCurrency": "EUR"
+    }
+  },
+  "credentialSchema": {
+    "id": "https://raw.githubusercontent.com/triveria-com/vcs/main/invoice/schema.json",
+    "type": "FullJsonSchemaValidator2021"
+  }
+}
