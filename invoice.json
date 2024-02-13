@@ -1,0 +1,1099 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Commercial Invoice Credential",
+  "description": "",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://api-pilot.ebsi.eu/trusted-schemas-registry/v2/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "title": "Invoice",
+          "description": "A statement of the money due for goods or services; a bill.",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "array",
+              "const": [
+                "Invoice"
+              ],
+              "default": [
+                "Invoice"
+              ],
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Invoice"
+                ]
+              }
+            },
+            "isProforma": {
+              "title": "is Pro Forma",
+              "description": "Indicates if this credential is a Pro Forma Invoice, or a normal invoice.",
+              "type": "boolean"
+            },
+            "identifier": {
+              "title": "Property Identifier",
+              "description": "Identifiers for a property.",
+              "type": "string"
+            },
+            "invoiceNumber": {
+              "title": "Invoice Number",
+              "description": "Invoice Number.",
+              "type": "string"
+            },
+            "invoiceDate": {
+              "title": "Invoice Date",
+              "description": "A date, time, date time, or other date time value of the invoice in the trade settlement.",
+              "type": "string"
+            },
+            "purchaseDate": {
+              "title": "Purchase Date",
+              "description": "The date that payment is made.",
+              "type": "string"
+            },
+            "seller": {
+              "title": "Seller",
+              "description": "An entity which offers (sells, leases, lends, or loans) the services or goods. A seller may also be a provider.",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "readOnly": true,
+                  "const": [
+                    "Organization"
+                  ],
+                  "default": [
+                    "Organization"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Organization"
+                    ]
+                  }
+                },
+                "id": {
+                  "title": "Identifier",
+                  "description": "Identifier for the seller",
+                  "type": "string"
+                },
+                "name": {
+                  "title": "Name",
+                  "description": "Name of the seller",
+                  "type": "string"
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the seller",
+                  "type": "string"
+                },
+                "email": {
+                  "title": "Email Address",
+                  "description": "Seller's primary email address.",
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "title": "Phone Number",
+                  "description": "Seller's contact phone number.",
+                  "type": "string"
+                },
+                "location": {
+                  "title": "Location",
+                  "description": "Seller's physical location, such as address or coordinates.",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "array",
+                      "readOnly": true,
+                      "const": [
+                        "Place"
+                      ],
+                      "default": [
+                        "Place"
+                      ],
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Place"
+                        ]
+                      }
+                    },
+                    "address": {
+                      "title": "Postal Address",
+                      "description": "The postal address for an organization or place.",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "array",
+                          "readOnly": true,
+                          "const": [
+                            "PostalAddress"
+                          ],
+                          "default": [
+                            "PostalAddress"
+                          ],
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "PostalAddress"
+                            ]
+                          }
+                        },
+                        "streetAddress": {
+                          "title": "Street Address",
+                          "description": "The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building.",
+                          "type": "string"
+                        },
+                        "addressLocality": {
+                          "title": "Address Locality",
+                          "description": "Text specifying the name of the locality; for example, a city.",
+                          "type": "string"
+                        },
+                        "addressRegion": {
+                          "title": "Address Region",
+                          "description": "Text specifying a province or state in abbreviated format; for example, NJ.",
+                          "type": "string"
+                        },
+                        "postalCode": {
+                          "title": "Postal Code",
+                          "description": "Text specifying the postal code for an address.",
+                          "type": "string"
+                        },
+                        "addressCountry": {
+                          "title": "Address Country",
+                          "description": "The two-letter ISO 3166-1 alpha-2 country code.",
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "type"
+              ]
+            },
+            "buyer": {
+              "title": "Buyer",
+              "description": "Importer of record. Party placing the order or paying the invoice.",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "readOnly": true,
+                  "const": [
+                    "Organization"
+                  ],
+                  "default": [
+                    "Organization"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Organization"
+                    ]
+                  }
+                },
+                "id": {
+                  "title": "Identifier",
+                  "description": "Identifier for the buyer",
+                  "type": "string"
+                },
+                "name": {
+                  "title": "Name",
+                  "description": "Name of the buyer",
+                  "type": "string"
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the buyer",
+                  "type": "string"
+                },
+                "email": {
+                  "title": "Email Address",
+                  "description": "Buyer's primary email address.",
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "title": "Phone Number",
+                  "description": "Buyer's contact phone number.",
+                  "type": "string"
+                },
+                "location": {
+                  "title": "Location",
+                  "description": "Buyer's physical location, such as address or coordinates.",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "array",
+                      "readOnly": true,
+                      "const": [
+                        "Place"
+                      ],
+                      "default": [
+                        "Place"
+                      ],
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Place"
+                        ]
+                      }
+                    },
+                    "address": {
+                      "title": "Postal Address",
+                      "description": "The postal address for an organization or place.",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "array",
+                          "readOnly": true,
+                          "const": [
+                            "PostalAddress"
+                          ],
+                          "default": [
+                            "PostalAddress"
+                          ],
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "PostalAddress"
+                            ]
+                          }
+                        },
+                        "streetAddress": {
+                          "title": "Street Address",
+                          "description": "The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building.",
+                          "type": "string"
+                        },
+                        "addressLocality": {
+                          "title": "Address Locality",
+                          "description": "Text specifying the name of the locality; for example, a city.",
+                          "type": "string"
+                        },
+                        "addressRegion": {
+                          "title": "Address Region",
+                          "description": "Text specifying a province or state in abbreviated format; for example, NJ.",
+                          "type": "string"
+                        },
+                        "postalCode": {
+                          "title": "Postal Code",
+                          "description": "Text specifying the postal code for an address.",
+                          "type": "string"
+                        },
+                        "addressCountry": {
+                          "title": "Address Country",
+                          "description": "The two-letter ISO 3166-1 alpha-2 country code.",
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "type"
+              ]
+            },
+            "itemsShipped": {
+              "title": "Items Shipped",
+              "description": "Itemized list of shipped goods.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "array",
+                    "readOnly": true,
+                    "const": [
+                      "TradeLineItem"
+                    ],
+                    "default": [
+                      "TradeLineItem"
+                    ],
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "TradeLineItem"
+                      ]
+                    }
+                  },
+                  "name": {
+                    "title": "Name",
+                    "description": "Name of the Tradeline item.",
+                    "type": "string"
+                  },
+                  "description": {
+                    "title": "Description of product",
+                    "type": "string"
+                  },
+                  "product": {
+                    "title": "Product",
+                    "description": "Product details.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "Product"
+                        ],
+                        "default": [
+                          "Product"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "Product"
+                          ]
+                        }
+                      },
+                      "id": {
+                        "title": "Product Identifier",
+                        "description": "The product identifier, such as ISBN.",
+                        "type": "string"
+                      },
+                      "gtin": {
+                        "title": "Global Trade Item Number (GTIN)",
+                        "type": "string"
+                      },
+                      "manufacturer": {
+                        "title": "Manufacturer",
+                        "description": "The manufacturer of the product.",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "array",
+                            "readOnly": true,
+                            "const": [
+                              "Organization"
+                            ],
+                            "default": [
+                              "Organization"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "Organization"
+                              ]
+                            }
+                          },
+                          "id": {
+                            "title": "Identifier",
+                            "description": "Identifier for the buyer",
+                            "type": "string"
+                          },
+                          "name": {
+                            "title": "Name",
+                            "description": "Name of the buyer",
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "name": {
+                        "title": "Name",
+                        "description": "Product name.",
+                        "type": "string"
+                      },
+                      "description": {
+                        "title": "Description",
+                        "description": "Product description.",
+                        "type": "string"
+                      },
+                      "category": {
+                        "title": "Category",
+                        "description": "A category for the item.",
+                        "type": "string"
+                      },
+                      "weight": {
+                        "title": "Weight",
+                        "description": "Weight of the product.",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "array",
+                            "readOnly": true,
+                            "const": [
+                              "QuantitativeValue"
+                            ],
+                            "default": [
+                              "QuantitativeValue"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "QuantitativeValue"
+                              ]
+                            }
+                          },
+                          "unitCode": {
+                            "title": "Unit Code",
+                            "description": "Unit of measurement.",
+                            "type": "string"
+                          },
+                          "value": {
+                            "title": "Value",
+                            "description": "Value or amount.",
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "productPrice": {
+                        "title": "Product Price",
+                        "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "array",
+                            "readOnly": true,
+                            "const": [
+                              "PriceSpecification"
+                            ],
+                            "default": [
+                              "PriceSpecification"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "PriceSpecification"
+                              ]
+                            }
+                          },
+                          "price": {
+                            "title": "Price",
+                            "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                            "type": "number"
+                          },
+                          "priceCurrency": {
+                            "title": "Price Currency",
+                            "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "sku": {
+                        "title": "SKU Number",
+                        "description": "The Stock Keeping Unit (SKU), i.e., a merchant-specific identifier for a product or service, or for the product to which the offer refers.",
+                        "type": "string"
+                      },
+                      "batchNumber": {
+                        "title": "Batch Number",
+                        "description": "A tracking number for commodities",
+                        "type": "string"
+                      },
+                      "commodity": {
+                        "title": "Commodity",
+                        "description": "Product commodity code, codification system and description",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "array",
+                            "readOnly": true,
+                            "const": [
+                              "Commodity"
+                            ],
+                            "default": [
+                              "Commodity"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "Commodity"
+                              ]
+                            }
+                          },
+                          "commodityCode": {
+                            "title": "Commodity Code",
+                            "description": "The commodity code at a given granularity, commonly a 6-digit HS or a 10-digit HTS code.",
+                            "type": "string"
+                          },
+                          "commodityCodeType": {
+                            "title": "Commodity Code Type",
+                            "description": "Commodity code type",
+                            "enum": [
+                              "HS",
+                              "HTS"
+                            ]
+                          },
+                          "description": {
+                            "title": "Commodity Description",
+                            "description": "Description of the commodity.",
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "itemCount": {
+                    "title": "Item Count",
+                    "description": "A quantity despatched in the trade delivery.",
+                    "type": "number"
+                  },
+                  "freeTradeAgreement": {
+                    "title": "Free Trade Agreement",
+                    "description": "Relevant Free Trade Agreement",
+                    "type": "string"
+                  },
+                  "countryOfOrigin": {
+                    "title": "Country of Origin",
+                    "description": "Identify the 2-digit ISO country code of the country of production.",
+                    "type": "string"
+                  },
+                  "netWeight": {
+                    "title": "Trade Line Item Net Weight",
+                    "description": "A measure of the net weight (mass).",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "QuantitativeValue"
+                        ],
+                        "default": [
+                          "QuantitativeValue"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "QuantitativeValue"
+                          ]
+                        }
+                      },
+                      "unitCode": {
+                        "title": "Unit Code",
+                        "description": "Unit of measurement.",
+                        "type": "string"
+                      },
+                      "value": {
+                        "title": "Value",
+                        "description": "Value or amount.",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "grossWeight": {
+                    "title": "Trade Line Item Gross Weight",
+                    "description": "A measure of the gross weight (mass) which includes packaging but excludes any transport equipment.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "QuantitativeValue"
+                        ],
+                        "default": [
+                          "QuantitativeValue"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "QuantitativeValue"
+                          ]
+                        }
+                      },
+                      "unitCode": {
+                        "title": "Unit Code",
+                        "description": "Unit of measurement.",
+                        "type": "string"
+                      },
+                      "value": {
+                        "title": "Value",
+                        "description": "Value or amount.",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "ioss": {
+                    "title": "IOSS",
+                    "description": "The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.",
+                    "type": "string"
+                  },
+                  "deemedResellerCategory": {
+                    "title": "DeemedResellerCategory",
+                    "description": "The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.",
+                    "type": "string",
+                    "enum": [
+                      "IOSS",
+                      "UOSS"
+                    ]
+                  },
+                  "lineItemTotalPrice": {
+                    "title": "Total Price",
+                    "description": "Total line item price.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "PriceSpecification"
+                        ],
+                        "default": [
+                          "PriceSpecification"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "PriceSpecification"
+                          ]
+                        }
+                      },
+                      "price": {
+                        "title": "Price",
+                        "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "number"
+                      },
+                      "priceCurrency": {
+                        "title": "Price Currency",
+                        "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "lineItemTax": {
+                    "title": "Tax",
+                    "description": "Applicable tax.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "PriceSpecification"
+                        ],
+                        "default": [
+                          "PriceSpecification"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "PriceSpecification"
+                          ]
+                        }
+                      },
+                      "price": {
+                        "title": "Price",
+                        "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "number"
+                      },
+                      "priceCurrency": {
+                        "title": "Price Currency",
+                        "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "lineItemFreightCost": {
+                    "title": "Freight Cost",
+                    "description": "Included cost of freight.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "PriceSpecification"
+                        ],
+                        "default": [
+                          "PriceSpecification"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "PriceSpecification"
+                          ]
+                        }
+                      },
+                      "price": {
+                        "title": "Price",
+                        "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "number"
+                      },
+                      "priceCurrency": {
+                        "title": "Price Currency",
+                        "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "lineItemInsuranceCost": {
+                    "title": "Insurance Cost",
+                    "description": "Included cost of insurance.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "array",
+                        "readOnly": true,
+                        "const": [
+                          "PriceSpecification"
+                        ],
+                        "default": [
+                          "PriceSpecification"
+                        ],
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "PriceSpecification"
+                          ]
+                        }
+                      },
+                      "price": {
+                        "title": "Price",
+                        "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "number"
+                      },
+                      "priceCurrency": {
+                        "title": "Price Currency",
+                        "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "type"
+                ]
+              },
+              "minItems": 1
+            },
+            "comments": {
+              "title": "Comments",
+              "description": "Free text comments.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "packageQuantity": {
+              "title": "Package Quantity",
+              "description": "Total number of packages.",
+              "type": "number"
+            },
+            "termsOfDelivery": {
+              "title": "Terms of Delivery",
+              "description": "The conditions agreed upon between the parties with regard to the delivery of goods and or services.",
+              "type": "string"
+            },
+            "termsOfPayment": {
+              "title": "Terms of Payment",
+              "description": "Terms, conditions, and currency of settlement, as agreed upon by the vendor and purchaser per the pro forma invoice, customer purchase order, and/or the letter of credit.",
+              "type": "string"
+            },
+            "currencyOfSettlement": {
+              "title": "Terms of Settlement",
+              "description": "Currency agreed upon between seller and buyer as payment.",
+              "type": "string"
+            },
+            "invoiceSubtotal": {
+              "title": "Invoice Subtotal",
+              "description": "The subtotal of line items.",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "readOnly": true,
+                  "const": [
+                    "PriceSpecification"
+                  ],
+                  "default": [
+                    "PriceSpecification"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "PriceSpecification"
+                    ]
+                  }
+                },
+                "price": {
+                  "title": "Price",
+                  "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "number"
+                },
+                "priceCurrency": {
+                  "title": "Price Currency",
+                  "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "type"
+              ]
+            },
+            "discounts": {
+              "title": "Discounts",
+              "description": "Applicable discounts.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "array",
+                    "readOnly": true,
+                    "const": [
+                      "PriceSpecification"
+                    ],
+                    "default": [
+                      "PriceSpecification"
+                    ],
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "PriceSpecification"
+                      ]
+                    }
+                  },
+                  "price": {
+                    "title": "Price",
+                    "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                    "type": "number"
+                  },
+                  "priceCurrency": {
+                    "title": "Price Currency",
+                    "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "type"
+                ]
+              }
+            },
+            "deductions": {
+              "title": "Additions",
+              "description": "Applicable additions.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "array",
+                    "readOnly": true,
+                    "const": [
+                      "PriceSpecification"
+                    ],
+                    "default": [
+                      "PriceSpecification"
+                    ],
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "PriceSpecification"
+                      ]
+                    }
+                  },
+                  "price": {
+                    "title": "Price",
+                    "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                    "type": "number"
+                  },
+                  "priceCurrency": {
+                    "title": "Price Currency",
+                    "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "type"
+                ]
+              }
+            },
+            "tax": {
+              "title": "Tax",
+              "description": "Applicable tax.",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "readOnly": true,
+                  "const": [
+                    "PriceSpecification"
+                  ],
+                  "default": [
+                    "PriceSpecification"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "PriceSpecification"
+                    ]
+                  }
+                },
+                "price": {
+                  "title": "Price",
+                  "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "number"
+                },
+                "priceCurrency": {
+                  "title": "Price Currency",
+                  "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "type"
+              ]
+            },
+            "freightCost": {
+              "title": "Freight Cost",
+              "description": "Included cost of freight.",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "readOnly": true,
+                  "const": [
+                    "PriceSpecification"
+                  ],
+                  "default": [
+                    "PriceSpecification"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "PriceSpecification"
+                    ]
+                  }
+                },
+                "price": {
+                  "title": "Price",
+                  "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "number"
+                },
+                "priceCurrency": {
+                  "title": "Price Currency",
+                  "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "type"
+              ]
+            },
+            "totalPaymentDue": {
+              "title": "Total Payment Due",
+              "description": "The total amount due.",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "readOnly": true,
+                  "const": [
+                    "PriceSpecification"
+                  ],
+                  "default": [
+                    "PriceSpecification"
+                  ],
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "PriceSpecification"
+                    ]
+                  }
+                },
+                "price": {
+                  "title": "Price",
+                  "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "number"
+                },
+                "priceCurrency": {
+                  "title": "Price Currency",
+                  "description": "The currency of the price, or a price component when attached to PriceSpecification and its subtypes.",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "price",
+                "priceCurrency"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "invoiceNumber",
+            "seller",
+            "buyer",
+            "itemsShipped",
+            "totalPaymentDue"
+          ]
+        }
+      }
+    }
+  ]
+}
