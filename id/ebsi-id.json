@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Triveria Natural Person Verifiable ID",
-  "description": "Schema of a Triveria Verifiable ID for a natural person",
+  "title": "EBSI Natural Person Verifiable ID",
+  "description": "Schema of an EBSI Verifiable ID for a natural person participating in the educational use cases ",
   "type": "object",
   "allOf": [
     {
@@ -10,7 +10,7 @@
     {
       "properties": {
         "credentialSubject": {
-          "description": "Defines additional properties on credentialSubject to describe IDs that are issued to an individuals associated with a Company.",
+          "description": "Defines additional properties on credentialSubject to describe IDs that do not have a substantial level of assurance.",
           "type": "object",
           "properties": {
             "id": {
@@ -32,6 +32,23 @@
               "description": "Defines current first name(s) of the credential subject",
               "type": "string"
             },
+            "dateOfBirth": {
+              "description": "Defines date of birth of the credential subject",
+              "type": "string",
+              "format": "date"
+            },
+            "personalIdentifier": {
+              "description": "Defines the unique national identifier of the credential subject (constructed by the sending Member State in accordance with the technical specifications for the purposes of cross-border identification and which is as persistent as possible in time)",
+              "type": "string"
+            },
+            "nameAndFamilyNameAtBirth": {
+              "description": "Defines the first and the family name(s) of the credential subject at the time of their birth",
+              "type": "string"
+            },
+            "placeOfBirth": {
+              "description": "Defines the place where the credential subject is born",
+              "type": "string"
+            },
             "currentAddress": {
               "description": "Defines the current address of the credential subject",
               "type": "array",
@@ -39,12 +56,8 @@
                 "type": "string"
               }
             },
-            "company": {
-              "description": "Defines the company of the credential subject",
-              "type": "string"
-            },
-            "companyRole": {
-              "description": "Defines the company role of the credential subject",
+            "gender": {
+              "description": "Defines the gender of the credential subject",
               "type": "string"
             },
             "email": {
@@ -53,11 +66,7 @@
             }
           },
           "required": [
-            "id",
-            "familyName",
-            "firstName",
-            "company",
-            "email"
+            "id"
           ]
         }
       }
