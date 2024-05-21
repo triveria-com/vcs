@@ -50,6 +50,10 @@
             "email": {
               "description": "Defines the email of the credential owner",
               "type": "string"
+            },
+            "photo": {
+              "description": "Defines the photo/picture of the credential owner",
+              "type": "string"
             }
           },
           "required": [
