@@ -51,6 +51,13 @@
                 "$ref": "#/$defs/partner"
               }
             },
+            "concessions": {
+              "description": "Concessions of the company",
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/concession"
+              }
+            },
             "domainName": {
               "description": "Domain name  of Credential Subject",
               "type": "array",
@@ -105,6 +112,20 @@
         },
         "firstName": {
           "description": "Defines current first name(s) of the credential subject",
+          "type": "string"
+        }
+      }
+    },
+    "concession": {
+      "description": "Defines a concession the company has been granted to",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Concession ID",
+          "type": "string"
+        },
+        "name": {
+          "description": "Concession name",
           "type": "string"
         }
       }
