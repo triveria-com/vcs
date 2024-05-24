@@ -55,7 +55,7 @@
               "description": "Concessions of the company",
               "type": "array",
               "items": {
-                "$ref": "#/$defs/concession"
+                "type": "string"
               }
             },
             "domainName": {
