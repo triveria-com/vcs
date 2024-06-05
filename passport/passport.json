@@ -1,0 +1,113 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Digital Passport",
+    "description": "Schema of a verifiable digital passport",
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "https://api-conformance.ebsi.eu/trusted-schemas-registry/v2/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+      },
+      {
+        "properties": {
+          "credentialSubject": {
+            "description": "Defines additional properties on credentialSubject to describe a passport document.",
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Defines a unique identifier of the credential subject",
+                "type": "string"
+              },
+              "identifier": {
+                "description": "Defines an alternative identifier for the person",
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/identifier"
+                }
+              },
+              "familyName": {
+                "description": "Defines current family name(s) of the credential subject",
+                "type": "string"
+              },
+              "firstName": {
+                "description": "Defines current first name(s) of the credential subject",
+                "type": "string"
+              },
+              "dateOfBirth": {
+                "description": "Defines date of birth of the credential subject",
+                "type": "string",
+                "format": "date"
+              },
+              "ageOver18": {
+                "description": "Defines if the credential subject's age is over 18",
+                "type": "boolean"
+              },
+              "passportNumber": {
+                "description": "Defines the passport number",
+                "type": "string"
+              },
+              "personalIdentifier": {
+                "description": "Defines the unique national identifier of the credential subject (constructed by the sending Member State in accordance with the technical specifications for the purposes of cross-border identification and which is as persistent as possible in time)",
+                "type": "string"
+              },
+              "gender": {
+                "description": "Defines the gender of the credential subject",
+                "type": "string"
+              },
+              "photo": {
+                "description": "Defines the photo/picture of the credential subject",
+                "type": "string"
+              },
+              "nationality": {
+                "description": "Defines the nationality of the credential subject as a ISO 3166 Alpha-3 country code",
+                "type": "string"
+              },
+              "fingerprintsData": {
+                "description": "Defines the biometric fingerprints of the credential subject",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "firstName",
+              "familyName",
+              "dateOfBirth",
+              "ageOver18",
+              "passportNumber",
+              "personalIdentifier",
+              "gender",
+              "photo",
+              "nationality"
+            ]
+          }
+        }
+      }
+    ],
+    "$defs": {
+      "identifier": {
+        "description": "Defines an alternative Identifier object ",
+        "type": "object",
+        "properties": {
+          "schemeID": {
+            "description": "Defines the schema used to define alternative identification",
+            "type": "string"
+          },
+          "value": {
+            "description": "Define the alternative identification value",
+            "type": "string"
+          },
+          "id": {
+            "description": "The URI of the identifier",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "schemeID",
+          "value"
+        ]
+      }
+    }
+  }
