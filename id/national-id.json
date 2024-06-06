@@ -79,7 +79,7 @@
               "familyName",
               "dateOfBirth",
               "ageOver18",
-              "passportNumber",
+              "idNumber",
               "personalIdentifier",
               "gender",
               "photo",
