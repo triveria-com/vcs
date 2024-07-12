@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EU Company Certificate for partnerships",
+  "description": "",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://api-pilot.ebsi.eu/trusted-schemas-registry/v2/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "description": "Defines information about the subject that is described by the Verifiable Credential",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/main/idunion/generics/company.json"
+            },
+            {
+              "properties": {
+                "id": {
+                  "description": "Defines a unique identifier of the organization for which the EU Company Certificate is issued (e.g. DID-subject)",
+                  "type": "string"
+                },
+                "maximumLiability": {
+                  "title": "Maximum liability",
+                  "description": "The maximum liability of the partners",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

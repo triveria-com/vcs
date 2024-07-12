@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Natural person",
+  "description": "Defines a natural person that may act as an organization representative",
+  "type": "object",
+  "properties": {
+    "familyName": {
+      "description": "Defines current family name(s) of the natural person",
+      "type": "string"
+    },
+    "firstName": {
+      "description": "Defines current first name(s) of the natural person",
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "description": "Defines date of birth of the natural person",
+      "type": "string",
+      "format": "date"
+    },
+    "placeOfBirth": {
+      "description": "The city where the natural person was born",
+      "type": "string"
+    }
+  },
+  "required": [
+    "familyName",
+    "firstName",
+    "dateOfBirth",
+    "placeOfBirth"
+  ]
+}

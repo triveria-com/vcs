@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Address",
+  "description": "Defines the address",
+  "type": "object",
+  "properties": {
+    "street": {
+      "title": "Street",
+      "description": "The name of the street where the organization is legally located",
+      "type": "string"
+    },
+    "streetNumber": {
+      "title": "Street number",
+      "description": "The name of the street number where the organization is legally located",
+      "type": "string"
+    },
+    "zip": {
+      "title": "ZIP code",
+      "description": "The zip code where the organization is legally located",
+      "type": "string"
+    },
+    "city": {
+      "title": "City",
+      "description": "The city where the organization is legally located",
+      "type": "string"
+    },
+    "country": {
+      "title": "Country",
+      "description": "An Alpha-2 country code as defined in ISO-3166-1",
+      "type": "string"
+    }
+  },
+  "required": [
+    "street",
+    "streetNumber",
+    "zip",
+    "city",
+    "country"
+  ]
+}

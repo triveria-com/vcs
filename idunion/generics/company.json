@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Company",
+  "description": "Defines basic information about an EU based company",
+  "type": "object",
+  "properties": {
+    "euid": {
+      "title": "EUID",
+      "description": "The EUID (European Unique Identifier) is a unique identification number assigned to entities, such as companies, registered in the European Union. It is structured according to the format: Country code, Identifier for national registry, dot(.), local identifier",
+      "type": "string"
+    },
+    "nationalRegistrationNumber": {
+      "title": "National registration number",
+      "description": "The specific number assigned to the entity within the national register",
+      "type": "string"
+    },
+    "legalForm": {
+      "title": "Legal form",
+      "description": "The legal form associated to the organization",
+      "type": "string"
+    },
+    "legalName": {
+      "title": "Legal name",
+      "description": "Legal name of the organization the ODI is issued to",
+      "type": "string"
+    },
+    "registrationDate": {
+      "title": "Registration Date",
+      "description": "The date when the legal entity was entered into the national registry",
+      "type": "string"
+    },
+    "registeredOffice": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/main/idunion/generics/address.json"
+      }
+    },
+    "correspondenceAddress": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/main/idunion/generics/address.json"
+        },
+        {
+          "description": "Defines the email address of the credential subject",
+          "type": "string",
+          "format": "email"
+        }
+      ]
+    },
+    "status": {
+      "title": "Status",
+      "description": "The current legal or operational standing of the company",
+      "type": "string"
+    },
+    "legalRepresentatives": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/main/idunion/generics/legal-entity.json"
+          },
+          {
+            "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/main/idunion/generics/natural-person.json"
+          }
+        ]
+      }
+    },
+    "naceCode": {
+      "description": "The industry code (NACE) that describes the industry the company is operating in",
+      "type": "string"
+    },
+    "duration": {
+      "title": "Duration",
+      "description": "For companies with a limited duration",
+      "type": "string"
+    },
+    "url": {
+      "title": "URL",
+      "description": "A website that is controlled by the company according to the imprint",
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "euid",
+    "nationalRegistrationNumber",
+    "legalForm",
+    "legalName",
+    "registeredOffice",
+    "correspondenceAddress",
+    "registrationDate",
+    "legalRepresentatives"
+  ]
+}

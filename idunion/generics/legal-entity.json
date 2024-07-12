@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Legal entity",
+  "description": "Defines an organization representative as a legal entity",
+  "type": "object",
+  "properties": {
+    "legalName": {
+      "title": "Legal Name",
+      "description": "Legal name of the organization",
+      "type": "string"
+    },
+    "legalForm": {
+      "title": "Legal form",
+      "description": "The legal form associated to the organization",
+      "type": "string"
+    },
+    "euid": {
+      "title": "EUID",
+      "description": "The EUID (European Unique Identifier) is a unique identification number assigned to entities, such as companies, registered in the European Union. It is structured according to the format: Country code, Identifier for national registry, dot(.), local identifier",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Power-of-Attorney",
+  "description": "",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://api-pilot.ebsi.eu/trusted-schemas-registry/v2/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "description": "Defines information about the subject that is described by the Verifiable Power-of-Attorney",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/main/idunion/generics/natural-person.json"
+            },
+            {
+              "properties": {
+                "id": {
+                  "description": "Defines a unique identifier of the natural person for which the Power of Attorney is issued (e.g. DID-subject)",
+                  "type": "string"
+                },
+                "poaScope": {
+                  "description": "Attribute that describes the range of the PoA (if unlimited. Full_PoA = True; if limited. PoA = false)",
+                  "type": "boolean"
+                },
+                "poaType": {
+                  "description": "A positive list of human readable areas for which the PoA is valid",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "poaScope"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
