@@ -5,7 +5,7 @@
     "type": "object",
     "allOf": [
       {
-        "$ref": "https://api-conformance.ebsi.eu/trusted-schemas-registry/v2/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+        "$ref": "https://api-pilot.ebsi.eu/trusted-schemas-registry/v2/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
       },
       {
         "properties": {
