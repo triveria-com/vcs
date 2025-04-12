@@ -53,7 +53,8 @@
             "legalName",
             "legalForm",
             "issuingAuthorityName",
-            "issuingCountry"
+            "issuingCountry",
+            "trustListId"
           ]
         }
       }
