@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IDunion Trusted Issuer Accreditation",
+  "description": "Verifiable credential to onboard to a trust list and accredit for issuance",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://api-pilot.ebsi.eu/trusted-schemas-registry/v3/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Defines a unique identifier of the organization for which the ODI is issued (e.g. DID-subject)",
+              "type": "string"
+            },
+            "legalName": {
+              "title": "Legal Name",
+              "description": "Legal name of the organization the ODI is issued to",
+              "type": "string"
+            },
+            "legalForm": {
+              "title": "Legal Form",
+              "description": "The legal form associated to the organization",
+              "type": "string"
+            },
+            "issuingAuthorityName": {
+              "title": "Issuing authority name",
+              "description": "Legal name of the organization that issued the ODI",
+              "type": "string"
+            },
+            "issuingCountry": {
+              "title": "Issuing country",
+              "description": "An Alpha-2 country code as defined in ISO-3166-1",
+              "type": "string"
+            },
+            "trustListId": {
+              "title": "Trust List Identifier",
+              "type": "string"
+            },
+            "accreditedFor": {
+              "description": "Defines for issuance of which credentials the issuer is accredited for",
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/accreditation"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "legalName",
+            "legalForm",
+            "issuingAuthorityName",
+            "issuingCountry"
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "accreditation": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "limitJurisdiction": {
+          "description": "Limits the credential validity for a specific jurisdiction",
+          "type": "string"
+        },
+        "schemaId": {
+          "description": "Verifiable Credential Schema ID the issuer is accredited to issue",
+          "type": "string"
+        },
+        "types": {
+          "description": "Identifiers defining a specific Verifiable Credential type",
+          "type": "array"
+        }
+      },
+      "required": [
+        "schemaId",
+        "types"
+      ]
+    }
+  }
+}
