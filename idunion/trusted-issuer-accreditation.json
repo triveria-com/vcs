@@ -36,10 +36,6 @@
               "description": "An Alpha-2 country code as defined in ISO-3166-1",
               "type": "string"
             },
-            "trustListId": {
-              "title": "Trust List Identifier",
-              "type": "string"
-            },
             "accreditedFor": {
               "description": "Defines for issuance of which credentials the issuer is accredited for",
               "type": "array",
