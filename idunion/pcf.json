@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Product Carbon Footprint",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://api-pilot.ebsi.eu/trusted-schemas-registry/v3/schemas/0xeb6d8131264327f3cbc5ddba9c69cb9afd34732b3b787e4b3e3507a25d3079e9"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Defines a unique identifier of the organization for which the PCF is issued (e.g. DID-subject)",
+              "type": "string"
+            },
+            "legalName": {
+              "title": "Legal Name",
+              "description": "Legal name of the organization the PCF is issued to",
+              "type": "string"
+            },
+            "legalForm": {
+              "title": "Legal Form",
+              "description": "The legal form associated to the organization",
+              "type": "string"
+            },
+            "issuingAuthorityName": {
+              "title": "Issuing authority name",
+              "description": "Legal name of the organization that issued the PCF",
+              "type": "string"
+            },
+            "carbonFootprint": {
+              "$ref": "#/$defs/carbonFootprint"
+            }
+          },
+          "required": [
+            "id",
+            "legalName"
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "carbonFootprint": {
+      "description": "Defines the manufacturer's Carbon Footprint",
+      "type": "object",
+      "properties": {
+        "direct": {
+          "description": "Direct emissions to air",
+          "type": "string"
+        },
+        "indirect": {
+          "description": "Indirect emissions from purchased energy",
+          "type": "string"
+        },
+        "other": {
+          "description": "Other indirect emissions",
+          "type": "string"
+        },
+        "total": {
+          "description": "Total emissions",
+          "type": "string"
+        }
+      },
+      "required": [
+        "direct",
+        "indirect",
+        "other",
+        "total"
+      ]
+    }
+  }
+}
