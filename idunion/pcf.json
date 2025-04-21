@@ -30,13 +30,19 @@
               "description": "Legal name of the organization that issued the PCF",
               "type": "string"
             },
+            "trustListId": {
+              "title": "Trust List Identifier",
+              "type": "string"
+            },
             "carbonFootprint": {
               "$ref": "#/$defs/carbonFootprint"
             }
           },
           "required": [
             "id",
-            "legalName"
+            "legalName",
+            "trustListId",
+            "carbonFootprint"
           ]
         }
       }
