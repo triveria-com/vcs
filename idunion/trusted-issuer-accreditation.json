@@ -13,7 +13,11 @@
           "type": "object",
           "properties": {
             "id": {
-              "description": "Defines a unique identifier of the organization for which the ODI is issued (e.g. DID-subject)",
+              "description": "Defines a unique identifier of the organization for which the accreditation is issued",
+              "type": "string"
+            },
+            "onboardingDid": {
+              "description": "Defines a unique identifier of the organization for the Trust List purposes",
               "type": "string"
             },
             "legalName": {
@@ -46,6 +50,7 @@
           },
           "required": [
             "id",
+            "onboardingDid",
             "legalName",
             "legalForm",
             "issuingAuthorityName",
