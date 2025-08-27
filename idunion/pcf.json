@@ -15,23 +15,14 @@
               "description": "Defines a unique identifier of the organization for which the PCF is issued (e.g. DID-subject)",
               "type": "string"
             },
-            "legalName": {
+            "holerLegalName": {
               "title": "Legal Name",
               "description": "Legal name of the organization the PCF is issued to",
               "type": "string"
             },
-            "legalForm": {
+            "holderLegalForm": {
               "title": "Legal Form",
               "description": "The legal form associated to the organization",
-              "type": "string"
-            },
-            "issuingAuthorityName": {
-              "title": "Issuing authority name",
-              "description": "Legal name of the organization that issued the PCF",
-              "type": "string"
-            },
-            "trustListId": {
-              "title": "Trust List Identifier",
               "type": "string"
             },
             "carbonFootprint": {
@@ -40,8 +31,8 @@
           },
           "required": [
             "id",
-            "legalName",
-            "trustListId",
+            "holerLegalName",
+            "holderLegalForm",
             "carbonFootprint"
           ]
         }

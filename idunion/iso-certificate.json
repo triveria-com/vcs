@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ISO Certificate",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/triveria-com/vcs/refs/heads/main/ebsi/verifiable_attestation.json"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Defines a unique identifier of the organization for which the ISO Certificate is issued (e.g. DID-subject)",
+              "type": "string"
+            },
+            "isoNormCode": {
+              "title": "ISO Norm Code",
+              "description": "The ISO Norm Code that was awarded to the VC holder.",
+              "type": "string"
+            },
+            "isoNormName": {
+              "title": "ISO Name",
+              "description": "The human readable name of the awarded ISO Norm.",
+              "type": "string"
+            },
+            "holderLegalName": {
+              "title": "Legal Name",
+              "description": "Legal name of the organization the PCF is issued to",
+              "type": "string"
+            },
+            "holderLegalForm": {
+              "title": "Legal Form",
+              "description": "The legal form associated to the organization",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "holderLegalName",
+            "holderLegalForm",
+            "isoNormCode",
+            "isoNormName"
+          ]
+        }
+      }
+    }
+  ]
+}
