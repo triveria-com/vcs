@@ -15,14 +15,9 @@
               "description": "Defines a unique identifier of the organization for which the PCF is issued (e.g. DID-subject)",
               "type": "string"
             },
-            "legalName": {
-              "title": "Legal Name",
-              "description": "Legal name of the organization the PCF is issued to",
-              "type": "string"
-            },
-            "legalForm": {
-              "title": "Legal Form",
-              "description": "The legal form associated to the organization",
+            "organizationName": {
+              "title": "Organization Name",
+              "description": "The name of the organization the PCF is issued to",
               "type": "string"
             },
             "carbonFootprint": {
@@ -31,8 +26,7 @@
           },
           "required": [
             "id",
-            "legalName",
-            "legalForm",
+            "organizationName",
             "carbonFootprint"
           ]
         }

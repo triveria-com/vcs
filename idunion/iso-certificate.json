@@ -25,23 +25,23 @@
               "description": "The human readable name of the awarded ISO Norm.",
               "type": "string"
             },
-            "legalName": {
-              "title": "Legal Name",
-              "description": "Legal name of the organization the PCF is issued to",
+            "organizationName": {
+              "title": "Organization name",
+              "description": "The Organization that the certificate has been awarded to",
               "type": "string"
             },
-            "legalForm": {
-              "title": "Legal Form",
-              "description": "The legal form associated to the organization",
+            "description": {
+              "title": "Description",
+              "description": "Certificate description",
               "type": "string"
             }
           },
           "required": [
             "id",
-            "legalName",
-            "legalForm",
             "isoNormCode",
-            "isoNormName"
+            "isoNormName",
+            "organizationName",
+            "description"
           ]
         }
       }
