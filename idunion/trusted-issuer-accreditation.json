@@ -30,16 +30,6 @@
               "description": "The legal form associated to the organization",
               "type": "string"
             },
-            "issuingAuthorityName": {
-              "title": "Issuing authority name",
-              "description": "Legal name of the organization that issued the ODI",
-              "type": "string"
-            },
-            "issuingCountry": {
-              "title": "Issuing country",
-              "description": "An Alpha-2 country code as defined in ISO-3166-1",
-              "type": "string"
-            },
             "orgAddress": {
               "$ref": "#/$defs/address"
             },
@@ -63,8 +53,6 @@
             "onboardingDid",
             "legalName",
             "legalForm",
-            "issuingAuthorityName",
-            "issuingCountry",
             "orgAddress"
           ]
         }
