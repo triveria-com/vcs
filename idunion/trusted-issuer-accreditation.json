@@ -40,6 +40,16 @@
               "description": "An Alpha-2 country code as defined in ISO-3166-1",
               "type": "string"
             },
+            "orgAddress": {
+              "$ref": "#/$defs/address"
+            },
+            "orgContactInfo": {
+              "$ref": "#/$defs/contactInfo"
+            },
+            "orgWebsite": {
+              "description": "Organization web site",
+              "type": "string"
+            },
             "accreditedFor": {
               "description": "Defines for issuance of which credentials the issuer is accredited for",
               "type": "array",
@@ -54,13 +64,46 @@
             "legalName",
             "legalForm",
             "issuingAuthorityName",
-            "issuingCountry"
+            "issuingCountry",
+            "orgAddress"
           ]
         }
       }
     }
   ],
   "$defs": {
+    "address": {
+      "streetAddress": {
+        "description": "Street address",
+        "type": "string"
+      },
+      "city": {
+        "description": "City",
+        "type": "string"
+      },
+      "state": {
+        "description": "State",
+        "type": "string"
+      },
+      "postalCode": {
+        "description": "Postal code",
+        "type": "string"
+      },
+      "country": {
+        "description": "Country",
+        "type": "string"
+      }
+    },
+    "contactInfo" : {
+      "email": {
+        "description": "Email",
+        "type": "string"
+      },
+      "website": {
+        "description": "website",
+        "type": "string"
+      }
+    },
     "accreditation": {
       "description": "",
       "type": "object",
