@@ -40,6 +40,10 @@
               "description": "Organization web site",
               "type": "string"
             },
+            "x509Certificate": {
+              "description": "x509 Certificate",
+              "type": "string"
+            },
             "accreditedFor": {
               "description": "Defines for issuance of which credentials the issuer is accredited for",
               "type": "array",
