@@ -20,14 +20,14 @@
               "description": "Defines a unique identifier of the organization for the Trust List purposes",
               "type": "string"
             },
-            "legalName": {
-              "title": "Legal Name",
-              "description": "Legal name of the organization the ODI is issued to",
+            "organizationName": {
+              "title": "Organization Name",
+              "description": "Name of the organization the TIA is issued to",
               "type": "string"
             },
-            "legalForm": {
-              "title": "Legal Form",
-              "description": "The legal form associated to the organization",
+            "tradeName": {
+              "title": "Trade Name",
+              "description": "Trade name as defined by ETSI TS 119 612 V2.3.1 (2024-11) - 5.4.2 TSP trade name",
               "type": "string"
             },
             "orgAddress": {
