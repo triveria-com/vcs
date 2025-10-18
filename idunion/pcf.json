@@ -42,8 +42,12 @@
           "description": "Product Category",
           "type": "string"
         },
+        "declaredValue": {
+          "description": "Declared Value",
+          "type": "string"
+        },
         "declaredUnit": {
-          "description": "Declared Unit in kg per ton",
+          "description": "Declared Unit",
           "type": "string"
         },
         "systematicScope": {
@@ -65,6 +69,7 @@
       },
       "required": [
         "productCategory",
+        "declaredValue",
         "declaredUnit",
         "systematicScope",
         "geographicalScope",
