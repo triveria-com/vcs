@@ -17,7 +17,7 @@
             },
             "organizationName": {
               "title": "Organization Name",
-              "description": "The name of the organization the PCF is issued to",
+              "description": "The name of the organization that declares the PCF values",
               "type": "string"
             },
             "carbonFootprint": {
@@ -38,28 +38,37 @@
       "description": "Defines the manufacturer's Carbon Footprint",
       "type": "object",
       "properties": {
-        "direct": {
-          "description": "Direct emissions to air",
+        "productCategory": {
+          "description": "Product Category",
           "type": "string"
         },
-        "indirect": {
-          "description": "Indirect emissions from purchased energy",
+        "declaredUnit": {
+          "description": "Declared Unit in kg per ton",
           "type": "string"
         },
-        "other": {
-          "description": "Other indirect emissions",
-          "type": "string"
-        },
-        "total": {
+        "systematicScope": {
           "description": "Total emissions",
+          "type": "string",
+          "enum": [
+            "Cradle-to-Gate",
+            "Cradle-to-Grave"
+          ]
+        },
+        "geographicalScope": {
+          "description": "Geographical Scope",
+          "type": "string"
+        },
+        "temporalScope": {
+          "description": "Temporal Scope / Time-frame",
           "type": "string"
         }
       },
       "required": [
-        "direct",
-        "indirect",
-        "other",
-        "total"
+        "productCategory",
+        "declaredUnit",
+        "systematicScope",
+        "geographicalScope",
+        "temporalScope"
       ]
     }
   }

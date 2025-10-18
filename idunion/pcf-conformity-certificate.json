@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ISO Certificate",
+  "title": "PCF Conformity Certificate",
   "type": "object",
   "allOf": [
     {
@@ -15,33 +15,27 @@
               "description": "Defines a unique identifier of the organization for which the ISO Certificate is issued (e.g. DID-subject)",
               "type": "string"
             },
-            "isoNormCode": {
-              "title": "ISO Norm Code",
-              "description": "The ISO Norm Code that was awarded to the VC holder.",
-              "type": "string"
-            },
-            "isoNormName": {
-              "title": "ISO Name",
-              "description": "The human readable name of the awarded ISO Norm.",
+            "isoNorm": {
+              "title": "ISO Norm",
+              "description": "The ISO Norm that was issued to the VC holder.",
               "type": "string"
             },
             "organizationName": {
               "title": "Organization name",
-              "description": "The Organization that the certificate has been awarded to",
+              "description": "The Organization that the certificate has been issued to",
               "type": "string"
             },
-            "description": {
-              "title": "Description",
-              "description": "Certificate description",
+            "productCategory": {
+              "title": "Product Category",
+              "description": "The Product Category for which the certificate was issued",
               "type": "string"
             }
           },
           "required": [
             "id",
-            "isoNormCode",
-            "isoNormName",
+            "isoNorm",
             "organizationName",
-            "description"
+            "productCategory"
           ]
         }
       }
