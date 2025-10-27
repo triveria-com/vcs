@@ -38,6 +38,10 @@
       "description": "Defines the manufacturer's Carbon Footprint",
       "type": "object",
       "properties": {
+        "product": {
+          "description": "Product",
+          "type": "string"
+        },
         "productCategory": {
           "description": "Product Category",
           "type": "string"

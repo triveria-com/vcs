@@ -29,6 +29,16 @@
               "title": "Product Category",
               "description": "The Product Category for which the certificate was issued",
               "type": "string"
+            },
+            "relevantUnitsConsidered": {
+              "title": "Relevant Units considered",
+              "description": "Have all relevant units been taken into account?",
+              "type": "string"
+            },
+            "systematicScopeConsidered": {
+              "title": "Systematic Scope considered",
+              "description": "Has the systematic scope been taken into account?",
+              "type": "string"
             }
           },
           "required": [
